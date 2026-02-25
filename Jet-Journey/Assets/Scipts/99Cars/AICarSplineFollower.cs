@@ -6,7 +6,7 @@ public class AICarSplineFollower : MonoBehaviour
 
     public Transform[] waypoints;
 
-    public int index = 0;
+    int index = 0;
 
     void Awake()
     {
@@ -37,22 +37,5 @@ public class AICarSplineFollower : MonoBehaviour
 
         car.position = waypoints[index].position;
         car.rotation = Quaternion.LookRotation(waypoints[index].forward);
-    }
-    public float GetXTurnDirection()
-    {
-        if (waypoints.Length < 2) return 0f;
-
-        int nextIndex = (index + 1) % waypoints.Length;
-
-        float currentX = waypoints[index].position.x;
-        float nextX = waypoints[nextIndex].position.x;
-
-        float deltaX = nextX - currentX;
-
-        // dead zone to avoid jitter
-        if (Mathf.Abs(deltaX) < 0.1f)
-            return 0f;
-
-        return Mathf.Sign(deltaX); // +1 = right, -1 = left
     }
 }

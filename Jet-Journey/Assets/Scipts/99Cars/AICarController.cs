@@ -125,43 +125,33 @@ public class AICarController : MonoBehaviour
 
     void UpdateSpeed()
     {
-        // Base speed
         currentSpeed = baseSpeed * speedMultiplier;
 
-        /* ================= TURN SLOWDOWN (X BASED) ================= */
+        if (!player) return;
 
-        float xTurn = Mathf.Abs(spline.GetXTurnDirection()); // 0, 1
-        currentSpeed *= Mathf.Lerp(1f, 0.75f, xTurn);
+        Vector3 toPlayer = player.position - transform.position;
+        float distance = toPlayer.magnitude;
+        float dot = Vector3.Dot(transform.forward, toPlayer.normalized);
 
-        /* ================= PLAYER INTERACTION ================= */
-
-        if (player)
+        switch (personality)
         {
-            Vector3 toPlayer = player.position - transform.position;
-            float dot = Vector3.Dot(transform.forward, toPlayer.normalized);
+            case AIPersonality.Racer:
+                if (dot > 0.2f)
+                    currentSpeed += catchUpBoost;
+                break;
 
-            switch (personality)
-            {
-                case AIPersonality.Racer:
-                    if (dot > 0.2f)
-                        currentSpeed += catchUpBoost;
-                    break;
+            case AIPersonality.Challenger:
+                currentSpeed += Mathf.Sin(Time.time + wanderOffset) * 0.5f;
+                break;
 
-                case AIPersonality.Challenger:
-                    currentSpeed += Mathf.Sin(Time.time + wanderOffset) * 0.5f;
-                    break;
+            case AIPersonality.Blocker:
+                currentSpeed += leadBiasBoost;
+                break;
 
-                case AIPersonality.Blocker:
-                    currentSpeed += leadBiasBoost;
-                    break;
-
-                case AIPersonality.Drifter:
-                    currentSpeed *= 0.9f;
-                    break;
-            }
+            case AIPersonality.Drifter:
+                currentSpeed *= 0.9f;
+                break;
         }
-
-        /* ================= FINAL CLAMP ================= */
 
         currentSpeed = Mathf.Clamp(
             currentSpeed,
@@ -196,13 +186,10 @@ public class AICarController : MonoBehaviour
     }
 
     /* ================= DIRECTION ================= */
+
     Vector3 GetDesiredDirection()
     {
         Vector3 splineDir = spline.GetForwardDirection();
-
-        // 🔁 X-based turn
-        float xTurn = spline.GetXTurnDirection();
-        Vector3 turnDir = transform.right * xTurn * 0.7f;
 
         // Personality lateral bias
         Vector3 lateral =
@@ -218,8 +205,9 @@ public class AICarController : MonoBehaviour
 
         Vector3 avoid = GetAvoidanceVector();
 
-        return (wanderDir + turnDir + lateral + avoid).normalized;
+        return (wanderDir + lateral + avoid).normalized;
     }
+
     Vector3 GetAvoidanceVector()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, avoidRadius);
