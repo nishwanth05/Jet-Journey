@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18471106}
-  - component: {fileID: 18471107}
   m_Layer: 0
   m_Name: Track_3
   m_TagString: Untagged
@@ -145,27 +144,12 @@ Transform:
   m_GameObject: {fileID: 18471105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 260}
+  m_LocalPosition: {x: 359, y: 0, z: 308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 883561313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &18471107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18471105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 0
-  turnAmount: 0.6
-  speedMultiplier: 0.85
 --- !u!1 &27502333
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +162,7 @@ GameObject:
   - component: {fileID: 27502337}
   - component: {fileID: 27502336}
   - component: {fileID: 27502335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +273,7 @@ GameObject:
   - component: {fileID: 47152488}
   - component: {fileID: 47152487}
   - component: {fileID: 47152486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1147,7 @@ GameObject:
   - component: {fileID: 432613608}
   - component: {fileID: 432613607}
   - component: {fileID: 432613606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1274,7 +1258,7 @@ GameObject:
   - component: {fileID: 487065314}
   - component: {fileID: 487065313}
   - component: {fileID: 487065312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,7 +1516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746438700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,6 +1542,37 @@ Transform:
   - {fileID: 1930663663}
   m_Father: {fileID: 1289984196}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &874079641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874079642}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874079642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874079641}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 968601292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881239870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,13 +1645,8 @@ Transform:
   - {fileID: 1776171971}
   - {fileID: 2143189630}
   - {fileID: 18471106}
-  - {fileID: 1342026330}
   - {fileID: 1415892376}
-  - {fileID: 1250084039}
   - {fileID: 1102854062}
-  - {fileID: 1216793589}
-  - {fileID: 1006530235}
-  - {fileID: 1523128403}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &883561314
@@ -1655,14 +1665,8 @@ MonoBehaviour:
   - {fileID: 1776171971}
   - {fileID: 2143189630}
   - {fileID: 18471106}
-  - {fileID: 1342026330}
   - {fileID: 1415892376}
-  - {fileID: 1250084039}
   - {fileID: 1102854062}
-  - {fileID: 1216793589}
-  - {fileID: 1006530235}
-  - {fileID: 1523128403}
-  index: 0
 --- !u!1 &901174499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 907102416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1841,7 @@ GameObject:
   - component: {fileID: 937607638}
   - component: {fileID: 937607637}
   - component: {fileID: 937607636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,6 +1951,7 @@ GameObject:
   - component: {fileID: 968601292}
   - component: {fileID: 968601291}
   - component: {fileID: 968601290}
+  - component: {fileID: 968601293}
   m_Layer: 0
   m_Name: Main car
   m_TagString: Player
@@ -2003,7 +2008,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 350
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2035,8 +2040,27 @@ Transform:
   m_Children:
   - {fileID: 410301808}
   - {fileID: 881239871}
+  - {fileID: 874079642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968601293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968601289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e543e045a702e42a2c072a3f0136fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundCheck
+  groundCheckPoint: {fileID: 874079642}
+  checkDistance: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  isGrounded: 0
 --- !u!1 &983280097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,53 +2132,6 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
---- !u!1 &1006530234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1006530235}
-  - component: {fileID: 1006530236}
-  m_Layer: 0
-  m_Name: Track_7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1006530235
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006530234}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417, y: 0, z: 795}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883561313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1006530236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006530234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 0
-  turnAmount: 0.6
-  speedMultiplier: 0.85
 --- !u!1 &1102854061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1102854062}
-  - component: {fileID: 1102854063}
   m_Layer: 0
   m_Name: Track_5
   m_TagString: Untagged
@@ -2181,27 +2157,12 @@ Transform:
   m_GameObject: {fileID: 1102854061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 310, y: 0, z: 437}
+  m_LocalPosition: {x: 403, y: 0, z: 977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 883561313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1102854063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102854061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 1
-  turnAmount: 0.508
-  speedMultiplier: 0.914
 --- !u!1 &1127651909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2175,7 @@ GameObject:
   - component: {fileID: 1127651913}
   - component: {fileID: 1127651912}
   - component: {fileID: 1127651911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2384,100 +2345,6 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
---- !u!1 &1216793588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1216793589}
-  - component: {fileID: 1216793590}
-  m_Layer: 0
-  m_Name: Track_6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1216793589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216793588}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 420, y: 0, z: 628}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883561313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1216793590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216793588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 1
-  turnAmount: 1
-  speedMultiplier: 0.758
---- !u!1 &1250084038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1250084039}
-  - component: {fileID: 1250084040}
-  m_Layer: 0
-  m_Name: Track_10
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1250084039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250084038}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 241.4, y: 0, z: 437}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883561313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1250084040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250084038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 2
-  turnAmount: 1
-  speedMultiplier: 1
 --- !u!1 &1289984195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,7 +2470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1330390837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2629,53 +2496,6 @@ Transform:
   - {fileID: 432613605}
   m_Father: {fileID: 1289984196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1342026329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1342026330}
-  - component: {fileID: 1342026331}
-  m_Layer: 0
-  m_Name: Track_9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1342026330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342026329}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 435}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883561313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342026331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342026329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 2
-  turnAmount: 0.418
-  speedMultiplier: 0.907
 --- !u!1 &1415892375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,7 +2505,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415892376}
-  - component: {fileID: 1415892377}
   m_Layer: 0
   m_Name: Track_4
   m_TagString: Untagged
@@ -2702,27 +2521,12 @@ Transform:
   m_GameObject: {fileID: 1415892375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145, y: 0, z: 451}
+  m_LocalPosition: {x: 275, y: 0, z: 685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 883561313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1415892377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415892375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 2
-  turnAmount: 1
-  speedMultiplier: 0.6
 --- !u!1 &1458040635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,7 +2579,7 @@ MonoBehaviour:
   poolSize: 99
   forwardMin: 200
   forwardMax: -4
-  sideRange: 50
+  sideRange: 75
   minSpawnDistance: 1
   maxSpawnAttempts: 5
   lateralOffsetMin: 1
@@ -2798,6 +2602,7 @@ GameObject:
   - component: {fileID: 1475423088}
   - component: {fileID: 1475423087}
   - component: {fileID: 1475423091}
+  - component: {fileID: 1475423092}
   m_Layer: 0
   m_Name: CarFollowCamera
   m_TagString: Untagged
@@ -2856,8 +2661,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475423086}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22979732, y: -0.0012286766, z: 0.00029011068, w: 0.9732377}
-  m_LocalPosition: {x: -1.9841921, y: 4.645068, z: -126.060684}
+  m_LocalRotation: {x: 0.22988473, y: 0, z: 0, w: 0.9732179}
+  m_LocalPosition: {x: -2, y: 4.6451917, z: -126.06064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2894,53 +2699,19 @@ MonoBehaviour:
     Time: 1
     Smoothing: 30
     IgnoreY: 1
---- !u!1 &1523128402
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1523128403}
-  - component: {fileID: 1523128404}
-  m_Layer: 0
-  m_Name: Track_8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1523128403
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523128402}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 414, y: 0, z: 1016}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 883561313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1523128404
+--- !u!114 &1475423092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523128402}
+  m_GameObject: {fileID: 1475423086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 0
-  turnAmount: 0.6
-  speedMultiplier: 0.85
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
+  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1610773527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2724,7 @@ GameObject:
   - component: {fileID: 1610773531}
   - component: {fileID: 1610773530}
   - component: {fileID: 1610773529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3064,7 +2835,7 @@ GameObject:
   - component: {fileID: 1614726416}
   - component: {fileID: 1614726415}
   - component: {fileID: 1614726414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3243,7 +3014,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1776171971}
-  - component: {fileID: 1776171972}
   m_Layer: 0
   m_Name: Track_1
   m_TagString: Untagged
@@ -3260,27 +3030,12 @@ Transform:
   m_GameObject: {fileID: 1776171970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 883561313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1776171972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776171970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 0
-  turnAmount: 0.6
-  speedMultiplier: 0.85
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,8 +3123,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22979732, y: -0.0012286766, z: 0.00029011068, w: 0.9732377}
-  m_LocalPosition: {x: -1.7205721, y: 4.645068, z: -139.66542}
+  m_LocalRotation: {x: 0.22986674, y: 0, z: 0, w: 0.97322214}
+  m_LocalPosition: {x: -1.73638, y: 4.645099, z: -139.66542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3394,7 +3149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 2
+  antialiasing: 0
   SMAAQuality: 2
   dithering: 1
   stopNaNs: 0
@@ -3558,7 +3313,7 @@ GameObject:
   - component: {fileID: 1906183568}
   - component: {fileID: 1906183567}
   - component: {fileID: 1906183566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3669,7 +3424,7 @@ GameObject:
   - component: {fileID: 1930663666}
   - component: {fileID: 1930663665}
   - component: {fileID: 1930663664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3780,7 +3535,7 @@ GameObject:
   - component: {fileID: 1968974798}
   - component: {fileID: 1968974797}
   - component: {fileID: 1968974796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4043,7 +3798,7 @@ GameObject:
   - component: {fileID: 2032983293}
   - component: {fileID: 2032983292}
   - component: {fileID: 2032983295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4230,7 +3985,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143189630}
-  - component: {fileID: 2143189631}
   m_Layer: 0
   m_Name: Track_2
   m_TagString: Untagged
@@ -4247,27 +4001,12 @@ Transform:
   m_GameObject: {fileID: 2143189629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 140}
+  m_LocalPosition: {x: 16, y: 0, z: 285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 883561313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2143189631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143189629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3163a088c2226cc48abc577713d58b22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaypointTurnData
-  direction: 0
-  turnAmount: 0.6
-  speedMultiplier: 0.85
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

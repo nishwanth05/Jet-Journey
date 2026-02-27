@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 1120399585421756598}
   - component: {fileID: 2698485133157163939}
   - component: {fileID: 2110745092509122269}
+  - component: {fileID: 8447328614179694092}
   m_Layer: 6
   m_Name: 99CarPrefab
   m_TagString: AICar
@@ -356,6 +357,7 @@ Transform:
   m_Children:
   - {fileID: 8769804864170644402}
   - {fileID: 7755588649891006632}
+  - {fileID: 7482537483135221866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1120399585421756598
@@ -383,7 +385,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &2698485133157163939
 MonoBehaviour:
@@ -397,18 +399,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c777873ad65b94d9f02f350c5ff67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AICarController
-  currentState: 0
   movementMode: 0
+  currentState: 0
   personality: 1
-  baseSpeed: 15
+  baseSpeed: 20
   catchUpBoost: 100
   leadBiasBoost: 2
   steeringStrength: 2
   lookAheadDistance: 6
-  wanderStrength: 1
-  wanderSpeed: 2
-  avoidRadius: 4
+  drawPathGizmos: 1
+  avoidDistance: 3
   avoidStrength: 2
+  carLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  turnSpeed: 6
+  maxSteerAngle: 45
+  steeringResponsiveness: 8
+  speedTier: 0
+  catchPlayerBias: 1
 --- !u!114 &2110745092509122269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,9 +430,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386567b455df91649a7339367c9c623b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AICarLOD
-  currentLOD: 0
   fullDist: 40
   simpleDist: 120
+--- !u!114 &8447328614179694092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626696220495929156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e543e045a702e42a2c072a3f0136fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundCheck
+  groundCheckPoint: {fileID: 7482537483135221866}
+  checkDistance: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  isGrounded: 0
 --- !u!1 &3662262744081267474
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +745,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5f62ea725ac15c145bade1597645729b, type: 3}
+--- !u!1 &5245972528752905930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7482537483135221866}
+  m_Layer: 6
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7482537483135221866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245972528752905930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.918, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5057415955310289362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5388629124849925365
 GameObject:
   m_ObjectHideFlags: 0

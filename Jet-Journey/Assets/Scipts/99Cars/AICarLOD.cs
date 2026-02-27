@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class AICarLOD : MonoBehaviour
 {
-    public enum LODLevel { Full, Simple, Fake }
-    public LODLevel currentLOD;
-
     public float fullDist = 40f;
     public float simpleDist = 120f;
 
@@ -25,13 +22,13 @@ public class AICarLOD : MonoBehaviour
 
     void Update()
     {
-        if (!player) return;
+        if (!player || !controller) return;
 
         float distSqr = (transform.position - player.position).sqrMagnitude;
 
-        if (distSqr < fullDistSqr)
+        if (distSqr < fullDistSqr * 0.9f)
             controller.movementMode = AICarController.MovementMode.FullPhysics;
-        else if (distSqr < simpleDistSqr)
+        else if (distSqr < simpleDistSqr * 0.9f)
             controller.movementMode = AICarController.MovementMode.Simple;
         else
             controller.movementMode = AICarController.MovementMode.Fake;
