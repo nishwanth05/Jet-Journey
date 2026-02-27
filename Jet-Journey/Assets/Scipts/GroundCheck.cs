@@ -1,29 +1,42 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    [Header("Ground Check Settings")]
-    public Transform groundCheckPoint;   // assign empty object under car
-    public float checkDistance = 0.5f;
-    public LayerMask groundLayer;
+    [Header("Explosion Settings")]
+    public float crashForceThreshold = 8f;
+    public GameObject explosionEffect;
+    public AudioClip explosionSound;
 
-    public bool isGrounded;
-
-    void Update()
+    bool hasExploded = false;
+   
+    void OnCollisionEnter(Collision collision)
     {
-        isGrounded = Physics.Raycast(
-            groundCheckPoint.position,
-            Vector3.down,
-            checkDistance,
-            groundLayer
-        );
+        if (hasExploded) return;
 
-        Debug.DrawRay(groundCheckPoint.position, Vector3.down * checkDistance,
-                      isGrounded ? Color.green : Color.red);
-
-        if (!isGrounded)
+        // Only react to other cars
+        if (collision.gameObject.CompareTag("AICar"))
         {
-            Destroy(gameObject,0.15f);
+            float impactForce = collision.relativeVelocity.magnitude;
+
+            if (impactForce >= crashForceThreshold)
+            {
+                Explode();
+            }
         }
+    }
+    void Explode()
+    {
+        hasExploded = true;
+
+        // Spawn VFX
+        if (explosionEffect != null)
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+        // Play Sound
+        if (explosionSound != null)
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+
+        // Destroy car
+        Destroy(gameObject);
     }
 }

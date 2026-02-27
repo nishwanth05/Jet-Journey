@@ -7,7 +7,7 @@ public class AICarController : MonoBehaviour
 
     public MovementMode movementMode = MovementMode.FullPhysics;
     public enum AICarState { Racing, Crashed, Recovering }
-    public enum AIPersonality { Racer, Challenger, Blocker, Drifter }
+    public enum AIPersonality { Racer, Challenger, Drifter }
 
     public AICarState currentState = AICarState.Racing;
     public AIPersonality personality;
@@ -60,6 +60,10 @@ public class AICarController : MonoBehaviour
     public float maxSteerAngle = 45f;   // max angle change per second
     public float steeringResponsiveness = 8f;
 
+    [Header("Ground Stick")]
+    public float groundCheckDistance = 3f;
+    public float groundStickForce = 20f;
+    public LayerMask groundLayer;
     public enum AISpeedTier
     {
         Slow,
@@ -132,6 +136,8 @@ public class AICarController : MonoBehaviour
 
         UpdateSpeed();
         ExecuteDrivePlan();
+
+        StickToGround();
     }
 
     void ExecuteDrivePlan()
@@ -191,10 +197,6 @@ public class AICarController : MonoBehaviour
                 laneOffset = Random.Range(-1.0f, 1.0f);
                 break;
 
-            case AIPersonality.Blocker:
-                laneOffset = Random.Range(-1.5f, 1.5f);
-                break;
-
             case AIPersonality.Drifter:
                 laneOffset = Random.Range(-2.0f, 2.0f);
                 break;
@@ -208,8 +210,6 @@ public class AICarController : MonoBehaviour
             personality = AIPersonality.Racer;
         else if (r < 0.6f)
             personality = AIPersonality.Challenger;
-        else if (r < 0.8f)
-            personality = AIPersonality.Blocker;
         else
             personality = AIPersonality.Drifter;
 
@@ -225,12 +225,6 @@ public class AICarController : MonoBehaviour
                 turnSpeed = 6f;
                 steeringResponsiveness = 7f;
                 maxSteerAngle = 40f;
-                break;
-
-            case AIPersonality.Blocker:
-                turnSpeed = 5f;
-                steeringResponsiveness = 6f;
-                maxSteerAngle = 45f;
                 break;
 
             case AIPersonality.Drifter:
@@ -426,10 +420,6 @@ public class AICarController : MonoBehaviour
                 currentSpeed *= 1.05f;
                 break;
 
-            case AIPersonality.Blocker:
-                currentSpeed *= 0.95f;
-                break;
-
             case AIPersonality.Drifter:
                 currentSpeed *= 0.9f;
                 break;
@@ -506,16 +496,41 @@ public class AICarController : MonoBehaviour
                 // Competitive, aggressive
                 return Color.yellow;
 
-            case AIPersonality.Blocker:
-                // Disruptive, hostile
-                return Color.red;
-
             case AIPersonality.Drifter:
                 // Loose, unpredictable
                 return new Color(0.6f, 0.3f, 1f); // purple
         }
 
         return Color.white;
+    }
+    void StickToGround()
+    {
+        RaycastHit hit;
+
+        Vector3 origin = transform.position + Vector3.up * 1.5f;
+
+        if (Physics.Raycast(origin, Vector3.down, out hit, groundCheckDistance, groundLayer))
+        {
+            // Lock Y position to ground
+            Vector3 pos = transform.position;
+            pos.y = hit.point.y+ 1f;
+            transform.position = pos;
+
+            // Align car to ground normal
+            Quaternion groundRotation =
+                Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                groundRotation,
+                Time.fixedDeltaTime * 8f
+            );
+
+            // Kill vertical velocity completely
+            Vector3 vel = rb.linearVelocity;
+            vel.y = 0f;
+            rb.linearVelocity = vel;
+        }
     }
     void OnDrawGizmos()
     {

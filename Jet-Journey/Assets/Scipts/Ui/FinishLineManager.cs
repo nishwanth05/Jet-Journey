@@ -71,8 +71,9 @@ public class FinishLineManager : MonoBehaviour
         Debug.Log("🏁 RACE FINISHED");
 
         // Optional slow motion
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0.0f;
 
+        AudioManager.Instance.FadeToMusic(AudioManager.Instance.gameEndMusic);
         // Future extensions:
         // - Disable player input
         // - Show leaderboard
